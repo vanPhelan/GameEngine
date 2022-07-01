@@ -37,9 +37,11 @@ void GameCore::Actor::draw()
 void GameCore::Actor::addComponent(Component* component)
 {
 	m_components.push_front(component);
+	component->setOwner(this);
 }
 
 void GameCore::Actor::removeComponent(Component* component)
 {
 	m_components.remove(component);
+	component->setOwner(nullptr);
 }

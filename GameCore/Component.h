@@ -1,6 +1,8 @@
 #pragma once
 
 namespace GameCore {
+	class Actor;
+
 	class Component
 	{
 	public:
@@ -25,6 +27,13 @@ namespace GameCore {
 		virtual void onDraw() {}
 
 	private:
+		void setOwner(Actor* owner) { m_owner = owner; }
+		Actor* getOwner() { return m_owner; }
+
+	private:
 		bool m_hasStarted = false;
+		Actor* m_owner = nullptr;
+
+		friend Actor;
 	};
 }

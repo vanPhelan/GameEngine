@@ -30,8 +30,24 @@ namespace GameCore {
 		void addComponent(Component* component);
 		void removeComponent(Component* component);
 
+		template<typename T>
+		T* getComponent();
+
 	private:
 		bool m_hasStarted = false;
 		std::forward_list<Component*> m_components;
 	};
+
+	template<typename T>
+	inline T* Actor::getComponent()
+	{
+		for (Component* component : m_components) {
+			T* target = dynamic_cast<T*>(component);
+			if (target) {
+				return target;
+			}
+		}
+
+		return nullptr;
+	}
 }
