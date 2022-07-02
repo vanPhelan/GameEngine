@@ -1,9 +1,10 @@
 #pragma once
 
-struct Vector4;
-struct Vector3;
-namespace MathLibrary
+namespace GameMath
 {
+    struct Vector4;
+    struct Vector3;
+
     struct Matrix4
     {
         
@@ -17,48 +18,48 @@ namespace MathLibrary
             float m31, float m32, float m33, float m34,
             float m41, float m42, float m43, float m44);
 
-        Matrix4 operator +(Matrix4 rhs);
+        GameMath::Matrix4 operator +(GameMath::Matrix4 rhs);
 
-        Matrix4 operator -(Matrix4 rhs);
+        GameMath::Matrix4 operator -(GameMath::Matrix4 rhs);
 
-        Matrix4 operator *(Matrix4 rhs);
+        GameMath::Matrix4 operator *(GameMath::Matrix4 rhs);
 
-        Vector4 operator *(Vector4 rhs);
+        GameMath::Vector4 operator *(GameMath::Vector4 rhs);
 
-        bool operator ==(Matrix4 rhs);
+        bool operator ==(GameMath::Matrix4 rhs);
 
         /// <summary>
         /// Creates a matrix thats been rotated by the given amount of radians
         ///on the z axis.
         /// </summary>
         /// <returns></returns>
-        static Matrix4 createRotationZ(float radians);
+        static GameMath::Matrix4 createRotationZ(float radians);
 
         /// <summary>
         /// Creates a matrix thats been rotated by the given amount of radians
         ///on the y axis.
         /// </summary>
         /// <returns></returns>
-        static Matrix4 createRotationY(float radians);
+        static GameMath::Matrix4 createRotationY(float radians);
 
         /// <summary>
         /// Creates a matrix thats been rotated by the given amount of radians
         ///on the x axis.
         /// </summary>
         /// <returns></returns>
-        static Matrix4 createRotationX(float radians);
+        static GameMath::Matrix4 createRotationX(float radians);
 
         /// <summary>
         /// Creates a matrix thats been translated to the given position.
         /// </summary>
         /// <returns></returns>
-        static Matrix4 createTranslation(Vector3 position);
+        static GameMath::Matrix4 createTranslation(GameMath::Vector3 position);
 
         /// <summary>
         /// Creates a matrix thats been scaled by the given vector.
         /// </summary>
         /// <returns></returns>
-        static Matrix4 createScale(Vector3 scale);
+        static GameMath::Matrix4 createScale(GameMath::Vector3 scale);
     };
 }
 

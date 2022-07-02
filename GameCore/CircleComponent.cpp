@@ -9,5 +9,6 @@ GameCore::CircleComponent::CircleComponent(float radius, Color color)
 
 void GameCore::CircleComponent::onDraw()
 {
-	DrawCircle(0, 0, m_radius, m_color);
+	GameMath::Vector3 position = getGlobalPosition();
+	DrawCircle((int)position.x, (int)position.y, m_radius, m_color);
 }

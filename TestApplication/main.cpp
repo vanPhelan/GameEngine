@@ -8,6 +8,7 @@ int main() {
 	GameCore::Scene* scene = new GameCore::Scene();
 	GameCore::Actor* actor = new GameCore::Actor();
 	GameCore::CircleComponent* circle = new GameCore::CircleComponent(25.0f);
+	circle->setLocalPosition({ 100.0f, 100.0f, 0.0f });
 
 	actor->addComponent(circle);
 	scene->addActor(actor);

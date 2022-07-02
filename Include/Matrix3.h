@@ -3,7 +3,7 @@
 struct Vector2;
 struct Vector3;
 
-namespace MathLibrary
+namespace GameMath
 {
     struct Matrix3
     {
@@ -17,35 +17,35 @@ namespace MathLibrary
             float m21, float m22, float m23,
             float  m31, float  m32, float m33);
 
-        Matrix3 operator +(Matrix3 rhs);
+        GameMath::Matrix3 operator +(GameMath::Matrix3 rhs);
 
-        Matrix3 operator -(Matrix3 rhs);
+        GameMath::Matrix3 operator -(GameMath::Matrix3 rhs);
 
-        Matrix3 operator *(Matrix3 rhs);
+        GameMath::Matrix3 operator *(GameMath::Matrix3 rhs);
 
-        Vector3 operator *(Vector3 rhs);
+        GameMath::Vector3 operator *(GameMath::Vector3 rhs);
 
-        bool operator ==(Matrix3 rhs);
+        bool operator ==(GameMath::Matrix3 rhs);
 
         /// <summary>
         /// Creates a matrix thats been rotated by the given amount of radians
         ///on the z axis.
         /// </summary>
         /// <returns></returns>
-        static Matrix3 createRotation(float radians);
+        static GameMath::Matrix3 createRotation(float radians);
 
         /// <summary>
         /// Creates a matrix thats been rotated by the given amount of radians
         ///on the y axis.
         /// </summary>
         /// <returns></returns>
-        static Matrix3 createTranslation(Vector2 position);
+        static GameMath::Matrix3 createTranslation(GameMath::Vector2 position);
 
         /// <summary>
         /// Creates a matrix thats been scaled by the given vector.
         /// </summary>
         /// <returns></returns>
-        static Matrix3 createScale(Vector2 scale);
+        static GameMath::Matrix3 createScale(GameMath::Vector2 scale);
     };
 }
 

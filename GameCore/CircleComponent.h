@@ -1,9 +1,9 @@
 #pragma once
-#include "Component.h"
+#include "TransformComponent.h"
 #include <raylib.h>
 
 namespace GameCore {
-	class CircleComponent : public Component
+	class CircleComponent : public TransformComponent
 	{
 	public:
 		CircleComponent(float radius = 5.0f, Color color = RAYWHITE);
